@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入lodash的全部功能 -->
+    <script src="./node_modules/lodash/lodash.js"></script>
+</head>
+
+<body>
+    <p>
+        请你输入搜索的内容：<input type="text">
+    </p>
+    <script>
+        let input = document.querySelector('input')
+        // 文本发生变化立刻执行
+        // _.debounce防抖
+        input.oninput = _.debounce(function () {
+            console.log('ajax发送请求');
+        }, 1000)
+        // lodash插件，里面封装函数的防抖与节流的业务【闭包+延迟器】
+    </script>
+</body>
+
+</html>

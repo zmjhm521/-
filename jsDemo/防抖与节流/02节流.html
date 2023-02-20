@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+    <div>
+        <h1>我是计数器<span>0</span></h1>
+        <button>点击我加1</button>
+    </div>
+</body>
+</html>
+
+<script>
+    // 防抖用户操作很频繁，但是只是执行一侧
+    // 节流用户操作很频繁，但是把频繁的操作编为少量操作【可以给浏览器有充裕的时间解析代码】
+    // 获取节点
+    let span = document.querySelector('span')
+    let count = 0
+    const btn = document.querySelector('button')
+    btn.onclick = _.throttle(function(){
+        count++;
+        span.innerHTML = count
+    },1000)
+</script>
